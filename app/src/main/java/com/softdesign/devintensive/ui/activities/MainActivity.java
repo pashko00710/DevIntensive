@@ -65,6 +65,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mUserInfo.add(mAccount);
         mUserInfo.add(mGithub);
         mUserInfo.add(mAboutMe);
+        loadUserInfoValue();
         setupActionBar();
         setupDrawerLayout();
         mFab.setOnClickListener(this);
@@ -72,6 +73,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         if(savedInstanceState == null) {
         } else {
             mCurrent = savedInstanceState.getBoolean(ConstantManager.EDIT_MODE, false);
+            saveUserInfoValue();
             changeEditMode(mCurrent);
         }
     }
