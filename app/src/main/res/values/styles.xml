@@ -7,5 +7,65 @@
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
     </style>
+    
+    <style name="icon">
+        <item name="android:layout_width">@dimen/size_small_24</item>
+        <item name="android:layout_height">@dimen/size_small_24</item>
+    </style>
+    
+    <style name="icon.left" parent="icon">
+        <item name="android:layout_gravity">top|left</item>
+        <item name="android:layout_marginTop">@dimen/size_small_24</item>
+        <item name="android:layout_marginLeft">@dimen/spacing_small_16</item>
+    </style>
 
+    <style name="icon.right" parent="icon">
+        <item name="android:layout_gravity">top|right</item>
+        <item name="android:layout_marginTop">@dimen/size_small_24</item>
+        <item name="android:layout_marginRight">@dimen/spacing_medium_32</item>
+    </style>
+
+    <style name="view_line">
+        <item name="android:background">@color/grey_light</item>
+    </style>
+
+    <style name="view_line.vertical" parent="view_line">
+        <item name="android:layout_width">@dimen/line_size</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="view_line.horizontal" parent="view_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/line_size</item>
+        <item name="android:layout_marginLeft">@dimen/spacing_larger_72</item>
+    </style>
+
+    <style name="overall">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="overall.indents" parent="overall">
+        <item name="android:layout_marginTop">@dimen/spacing_smaller_8</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_smaller_8</item>
+    </style>
+
+    <style name="overall.activitymain_edittext" parent="overall">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/grey</item>
+    </style>
+
+    <style name="overall.scoreBox_text" parent="overall">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/spacing_small_16</item>
+    </style>
+
+    <style name="overall.header_textview" parent="overall">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">24sp</item>
+    </style>
 </resources>

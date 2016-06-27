@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">DevIntensive</string>
+    <string name="app_name_me">Архипов Павел</string>
+    <string name="about_me">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut vestibulum elementum ante, vel dignissim eros tristique sed.
+        Maecenas tempor libero et erat ultrices, at egestas libero efficitur.
+        Nunc vitae tellus sed nunc dictum dictum non ac dui.
+        Sed euismod eleifend cursus. Sed nisi tellus, egestas ac sapien a, ultrices tincidunt eros.
+        In facilisis nec orci ac sollicitudin.</string>
+    <string name="rating">Рейтинг</string>
+    <string name="rating_count">5</string>
+    <string name="code_count">5000</string>
+    <string name="code">Написано строк кода</string>
+    <string name="projects">Проекты</string>
+    <string name="projects_count">5</string>
 </resources>
