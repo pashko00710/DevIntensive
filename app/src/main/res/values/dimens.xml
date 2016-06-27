@@ -26,4 +26,18 @@
 
     <!--Header in activity main-->
     <dimen name="activitymain_header_size">112dp</dimen>
+    <dimen name="width_navigationview">304dp</dimen>
+    <dimen name="drawer_status_bar_height">25dp</dimen>
+    <dimen name="header_imeageavatarsize">64dp</dimen>
+    <dimen name="profile_margin">16dp</dimen>
+    <dimen name="user_data_indent">56dp</dimen>
+    <dimen name="user_data_margintop">86dp</dimen>
+    <dimen name="margin_bottom_username">28dp</dimen>
+    <dimen name="nameTextSize">14sp</dimen>
+    <dimen name="margin_bottom_useremail">8dp</dimen>
+    <dimen name="drawer_header_layout_height">172dp</dimen>
+    <dimen name="profile_image_size">256dp</dimen>
+
+    <dimen name="margin_right_fab">16dp</dimen>
+    <dimen name="margin_bottom_fab">16dp</dimen>
 </resources>
