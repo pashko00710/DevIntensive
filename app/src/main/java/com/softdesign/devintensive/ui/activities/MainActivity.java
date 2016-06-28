@@ -65,7 +65,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mUserInfo.add(mAccount);
         mUserInfo.add(mGithub);
         mUserInfo.add(mAboutMe);
-        loadUserInfoValue();
         setupActionBar();
         setupDrawerLayout();
         mFab.setOnClickListener(this);
