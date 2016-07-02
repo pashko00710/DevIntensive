@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">DevIntensive</string>
     <string name="app_name_me">Архипов Павел</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
     <string name="about_me">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Ut vestibulum elementum ante, vel dignissim eros tristique sed.
         Maecenas tempor libero et erat ultrices, at egestas libero efficitur.
@@ -13,4 +15,6 @@
     <string name="code">Написано строк кода</string>
     <string name="projects">Проекты</string>
     <string name="projects_count">5</string>
+    <string name="nav_drawer_myaccount">Мой аккаунт</string>
+    <string name="nav_drawer_commands">Команда</string>
 </resources>

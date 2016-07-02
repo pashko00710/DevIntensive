@@ -1,101 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/drawer_layout">
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/overall"
+        android:id="@+id/main_coordinator_container"
         android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/activitymain_header_size"
-        android:background="@color/grey"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/appbar_layout"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="@color/color_primary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/profile_image_size"
+                android:scaleType="centerCrop"
+                android:fitsSystemWindows="true"
+                android:src="@drawable/main_photo"
+                />
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                />
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_large_72"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activitymain_header_size"
+            android:background="@color/grey"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="@dimen/spacing_larger_72"
-                android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:layout_weight="0.25">
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_large_72"
+                android:orientation="horizontal">
 
-                <TextView
-                    style="@style/overall.header_textview"
-                    android:id="@+id/header_rating"
-                    android:text="@string/rating_count" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/spacing_larger_72"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_weight="0.25">
 
-                <TextView
-                    style="@style/overall.scoreBox_text"
-                    android:text="@string/rating"/>
+                    <TextView
+                        style="@style/overall.header_textview"
+                        android:id="@+id/header_rating"
+                        android:text="@string/rating_count" />
 
-            </LinearLayout>
+                    <TextView
+                        style="@style/overall.scoreBox_text"
+                        android:text="@string/rating"/>
 
-            <View style="@style/view_line.vertical"/>
+                </LinearLayout>
 
-            <!-- Lines of code -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="@dimen/spacing_larger_72"
-                android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:layout_weight="0.5">
+                <View style="@style/view_line.vertical"/>
 
-                <TextView
-                    style="@style/overall.header_textview"
-                    android:id="@+id/header_codecount"
-                    android:text="@string/code_count" />
+                <!-- Lines of code -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/spacing_larger_72"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_weight="0.5">
 
-                <TextView
-                    style="@style/overall.scoreBox_text"
-                    android:text="@string/code"/>
+                    <TextView
+                        style="@style/overall.header_textview"
+                        android:id="@+id/header_codecount"
+                        android:text="@string/code_count" />
 
-            </LinearLayout>
+                    <TextView
+                        style="@style/overall.scoreBox_text"
+                        android:text="@string/code"/>
 
-            <View style="@style/view_line.vertical"/>
+                </LinearLayout>
 
-            <!-- Projects -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="@dimen/spacing_larger_72"
-                android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:layout_weight="0.25">
+                <View style="@style/view_line.vertical"/>
 
-                <TextView
-                    style="@style/overall.header_textview"
-                    android:id="@+id/header_projects"
-                    android:text="@string/projects_count" />
+                <!-- Projects -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/spacing_larger_72"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_weight="0.25">
 
-                <TextView
-                    style="@style/overall.scoreBox_text"
-                    android:text="@string/projects"/>
+                    <TextView
+                        style="@style/overall.header_textview"
+                        android:id="@+id/header_projects"
+                        android:text="@string/projects_count" />
+
+                    <TextView
+                        style="@style/overall.scoreBox_text"
+                        android:text="@string/projects"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
 
+            <LinearLayout
+                style="@style/overall.indents"
+                android:orientation="horizontal">
+                <ImageView
+                    style="@style/icon.left"
+                    android:src="@drawable/ic_local_phone_black_24dp"
+                    />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/spacing_larger_72"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/spacing_medium_32"
+                    android:layout_marginRight="@dimen/spacing_small_16">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <EditText
+                            style="@style/overall.activitymain_edittext"
+                            android:id="@+id/main_phone"
+                            android:inputType="phone"
+                            android:focusable="false"
+                            android:background="#00000000"
+                            android:paddingTop="@dimen/spacing_smaller_8"
+                            android:text="9899"
+                            android:hint="Мобильный телефон"/>
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
 
+                <ImageView
+                    style="@style/icon.right"
+                    android:id="@+id/main_call"
+                    android:src="@drawable/ic_phone_in_talk_black_24dp" />
+            </LinearLayout>
+                <View
+                    style="@style/view_line.horizontal"/>
         <LinearLayout
             style="@style/overall.indents"
             android:orientation="horizontal">
             <ImageView
                 style="@style/icon.left"
-                android:src="@drawable/ic_local_phone_black_24dp"
+                android:src="@drawable/ic_email_black_24dp"
                 />
             <LinearLayout
                 android:layout_width="0dp"
@@ -106,164 +180,147 @@
                 android:layout_marginLeft="@dimen/spacing_medium_32"
                 android:layout_marginRight="@dimen/spacing_small_16">
                 <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    style="@style/overall">
                     <EditText
                         style="@style/overall.activitymain_edittext"
-                        android:id="@+id/main_phone"
-                        android:inputType="phone"
-                        android:focusable="false"
-                        android:background="#00000000"
+                        android:id="@+id/main_email"
+                        android:inputType="textEmailAddress"
+                        android:text="myMail"
+                        android:hint="Введите email"
                         android:paddingTop="@dimen/spacing_smaller_8"
-                        android:text="9899"
-                        android:hint="Мобильный телефон"/>
+                        android:background="#00000000"
+                        android:focusable="false"
+                        />
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
             <ImageView
                 style="@style/icon.right"
-                android:src="@drawable/ic_phone_in_talk_black_24dp" />
+                android:src="@drawable/ic_send_black_24dp" />
         </LinearLayout>
-            <View
-                style="@style/view_line.horizontal"/>
-    <LinearLayout
-        style="@style/overall.indents"
-        android:orientation="horizontal">
-        <ImageView
-            style="@style/icon.left"
-            android:src="@drawable/ic_email_black_24dp"
-            />
+        <View
+            style="@style/view_line.horizontal"/>
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="@dimen/spacing_larger_72"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:layout_marginLeft="@dimen/spacing_medium_32"
-            android:layout_marginRight="@dimen/spacing_small_16">
-            <android.support.design.widget.TextInputLayout
-                style="@style/overall">
-                <EditText
-                    style="@style/overall.activitymain_edittext"
-                    android:id="@+id/main_email"
-                    android:inputType="textEmailAddress"
-                    android:text="myMail"
-                    android:hint="Введите email"
-                    android:paddingTop="@dimen/spacing_smaller_8"
-                    android:background="#00000000"
-                    android:focusable="false"
-                    />
-            </android.support.design.widget.TextInputLayout>
-        </LinearLayout>
+            style="@style/overall.indents"
+            android:orientation="horizontal">
+            <ImageView
+                style="@style/icon.left"
+                android:src="@drawable/ic_vk_circle_grey600_24dp"
+                />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/spacing_larger_72"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/spacing_medium_32"
+                android:layout_marginRight="@dimen/spacing_small_16">
+                <android.support.design.widget.TextInputLayout
+                    style="@style/overall">
+                    <EditText
+                        style="@style/overall.activitymain_edittext"
+                        android:id="@+id/main_profile"
+                        android:inputType="textUri"
+                        android:text="vk.com/id98089807"
+                        android:hint="Профиль в VK"
+                        android:paddingTop="@dimen/spacing_smaller_8"
+                        android:background="#00000000"
+                        android:focusable="false"
+                        />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
 
-        <ImageView
-            style="@style/icon.right"
-            android:src="@drawable/ic_send_black_24dp" />
-    </LinearLayout>
-    <View
-        style="@style/view_line.horizontal"/>
-    <LinearLayout
-        style="@style/overall.indents"
-        android:orientation="horizontal">
-        <ImageView
-            style="@style/icon.left"
-            android:src="@drawable/ic_vk_circle_grey600_24dp"
-            />
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="@dimen/spacing_larger_72"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:layout_marginLeft="@dimen/spacing_medium_32"
-            android:layout_marginRight="@dimen/spacing_small_16">
-            <android.support.design.widget.TextInputLayout
-                style="@style/overall">
-                <EditText
-                    style="@style/overall.activitymain_edittext"
-                    android:id="@+id/main_profile"
-                    android:inputType="textUri"
-                    android:text="vk.com/id98089807"
-                    android:hint="Профиль в VK"
-                    android:paddingTop="@dimen/spacing_smaller_8"
-                    android:background="#00000000"
-                    android:focusable="false"
-                    />
-            </android.support.design.widget.TextInputLayout>
+            <ImageView
+                style="@style/icon.right"
+                android:src="@drawable/ic_eye_grey600_24dp" />
         </LinearLayout>
+        <View
+            style="@style/view_line.horizontal"/>
+        <LinearLayout
+            style="@style/overall.indents"
+            android:orientation="horizontal">
+            <ImageView
+                style="@style/icon.left"
+                android:src="@drawable/ic_github_circle_grey600_24dp"
+                />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/spacing_larger_72"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/spacing_medium_32"
+                android:layout_marginRight="@dimen/spacing_small_16">
+                <android.support.design.widget.TextInputLayout
+                    style="@style/overall">
+                    <EditText
+                        style="@style/overall.activitymain_edittext"
+                        android:id="@+id/main_github"
+                        android:inputType="textUri"
+                        android:text="github.com/pashko00710/DevIntensive"
+                        android:hint="Репозиторий"
+                        android:paddingTop="@dimen/spacing_smaller_8"
+                        android:background="#00000000"
+                        android:focusable="false"
+                        />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
 
-        <ImageView
-            style="@style/icon.right"
-            android:src="@drawable/ic_eye_grey600_24dp" />
-    </LinearLayout>
-    <View
-        style="@style/view_line.horizontal"/>
-    <LinearLayout
-        style="@style/overall.indents"
-        android:orientation="horizontal">
-        <ImageView
-            style="@style/icon.left"
-            android:src="@drawable/ic_github_circle_grey600_24dp"
-            />
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="@dimen/spacing_larger_72"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:layout_marginLeft="@dimen/spacing_medium_32"
-            android:layout_marginRight="@dimen/spacing_small_16">
-            <android.support.design.widget.TextInputLayout
-                style="@style/overall">
-                <EditText
-                    style="@style/overall.activitymain_edittext"
-                    android:id="@+id/main_github"
-                    android:inputType="textUri"
-                    android:text="github.com/pashko00710/DevIntensive"
-                    android:hint="Репозиторий"
-                    android:paddingTop="@dimen/spacing_smaller_8"
-                    android:background="#00000000"
-                    android:focusable="false"
-                    />
-            </android.support.design.widget.TextInputLayout>
+            <ImageView
+                style="@style/icon.right"
+                android:src="@drawable/ic_eye_grey600_24dp" />
         </LinearLayout>
-
-        <ImageView
-            style="@style/icon.right"
-            android:src="@drawable/ic_eye_grey600_24dp" />
-    </LinearLayout>
-    <View
-        style="@style/view_line.horizontal"/>
-    <LinearLayout
-        style="@style/overall.indents"
-        android:orientation="horizontal">
-        <ImageView
-            style="@style/icon.left"
-            android:src="@drawable/ic_account_circle_grey600_24dp"
-            />
+        <View
+            style="@style/view_line.horizontal"/>
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="@dimen/spacing_larger_248"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:layout_marginLeft="@dimen/spacing_medium_32"
-            android:layout_marginRight="@dimen/spacing_small_16">
-            <android.support.design.widget.TextInputLayout
-                style="@style/overall">
-                <EditText
-                    style="@style/overall.activitymain_edittext"
-                    android:id="@+id/main_aboutme"
-                    android:text="@string/about_me"
-                    android:hint="О себе"
-                    android:scrollHorizontally="false"
-                    android:paddingTop="@dimen/spacing_smaller_8"
-                    android:background="#00000000"
-                    android:focusable="false"
-                    />
-            </android.support.design.widget.TextInputLayout>
+            style="@style/overall.indents"
+            android:orientation="horizontal">
+            <ImageView
+                style="@style/icon.left"
+                android:src="@drawable/ic_account_circle_grey600_24dp"
+                />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/spacing_larger_248"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/spacing_medium_32"
+                android:layout_marginRight="@dimen/spacing_small_16">
+                <android.support.design.widget.TextInputLayout
+                    style="@style/overall">
+                    <EditText
+                        style="@style/overall.activitymain_edittext"
+                        android:id="@+id/main_aboutme"
+                        android:text="@string/about_me"
+                        android:hint="О себе"
+                        android:scrollHorizontally="false"
+                        android:paddingTop="@dimen/spacing_smaller_8"
+                        android:background="#00000000"
+                        android:focusable="false"
+                        />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-    </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
-</LinearLayout>
+        </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/my_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom_fab"
+            android:layout_marginRight="@dimen/margin_right_fab"
+            android:src="@drawable/ic_create_black_24dp"
+            app:fabSize="normal"
+            app:layout_anchor="@id/appbar_layout"
+            app:layout_anchorGravity="bottom|right" />
+    </android.support.design.widget.CoordinatorLayout>
+    <android.support.design.widget.NavigationView
+        android:layout_width="@dimen/width_navigationview"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/navigation_view"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/drawer_menu"/>
+</android.support.v4.widget.DrawerLayout>
